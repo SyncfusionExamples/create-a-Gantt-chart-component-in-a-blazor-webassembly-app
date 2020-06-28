@@ -1,0 +1,61 @@
+﻿@page "/"
+@using Syncfusion.Blazor.Gantt
+
+    <SfGantt DataSource="@TaskCollection" Height="450px" Width="850px" AllowFiltering="true">
+        <GanttTaskFields Id="TaskId" Name="TaskName" StartDate="StartDate" EndDate="EndDate" Duration="Duration"
+                         Progress="Progress" Child="SubTasks">
+        </GanttTaskFields>
+        <GanttTimelineSettings TimelineViewMode="TimelineViewMode.Month" TimelineUnitSize="200"></GanttTimelineSettings>
+        <GanttEditSettings AllowEditing="true" Mode="EditMode.Dialog"></GanttEditSettings>
+    </SfGantt>
+
+@code{
+
+    public class TaskData
+    {
+        public int TaskId { get; set; }
+        public string TaskName { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string Duration { get; set; }
+        public int Progress { get; set; }
+        public List<TaskData> SubTasks { get; set; }
+    }
+
+    public List<TaskData> TaskCollection { get; set; }
+
+    public static List<TaskData> GetTaskCollection()
+    {
+        List<TaskData> Tasks = new List<TaskData>() {
+        new TaskData() {
+            TaskId = 1,
+            TaskName = "Project initiation",
+            StartDate = new DateTime(2020, 06, 09),
+            EndDate = new DateTime(2020, 06, 26),
+            SubTasks = (new List <TaskData> () {
+                new TaskData() {
+                    TaskId = 2,
+                    TaskName = "Identify Site location",
+                    StartDate = new DateTime(2020, 06, 09),
+                    Duration = "4",
+                    Progress = 50,
+                },
+                new TaskData() {
+                    TaskId = 3,
+                    TaskName = "Perform soil test",
+                    StartDate = new DateTime(2020, 06, 09),
+                    Duration = "4",
+                    Progress = 50,
+                }
+            })
+        }
+    };
+        return Tasks;
+    }
+
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+            this.TaskCollection = GetTaskCollection();
+        }
+}
