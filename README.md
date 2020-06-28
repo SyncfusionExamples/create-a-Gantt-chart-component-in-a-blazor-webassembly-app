@@ -5,6 +5,7 @@ A quick-start project that helps you create a Blazor Gantt Chart of Syncfusion i
 Watch the video now:<coming soon>
 
 Documentation: https://blazor.syncfusion.com/documentation/gantt-chart/getting-started
+
 Online example: https://blazor.syncfusion.com/demos/gantt-chart/default-functionalities
 
 ## Project prerequisites
