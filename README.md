@@ -2,7 +2,7 @@
 
 A quick-start project that helps you create a Blazor Gantt Chart of Syncfusion in the Blazor WebAssembly application. In this example, you can learn how to add prominent features like timeline view, editing, and filtering.
 
-Watch the video now:<coming soon>
+Watch the video now: https://www.syncfusion.com/tutorial-videos/blazor/gantt-chart?title=create-a-gantt-chart-component-in-a-blazor-webassembly
 
 Documentation: https://blazor.syncfusion.com/documentation/gantt-chart/getting-started
 
